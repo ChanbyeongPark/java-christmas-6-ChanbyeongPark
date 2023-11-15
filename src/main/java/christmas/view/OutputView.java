@@ -12,12 +12,18 @@ public class OutputView {
     private static final String RESULT_MENUS_TITLE = "<주문 메뉴>";
     private static final String TOTAL_PRICE_BEFORE_DISCOUNT_TITLE = "<할인 전 총주문 금액>";
     private static final String FREE_GIFT_TITLE = "<증정 메뉴>";
+    private static final String DISCOUNT_TITLE = "<혜택 내역>";
     private static final String NUMBER_MENU_UNIT = "개";
     private static final String PRICE_UNIT = "원";
     private static final String FREE_GIFT_MENU = "샴페인";
     private static final String BLANK = " ";
     private static final String FREE_GIFT_NUMBER = "1";
     private static final String NOTHING = "없음";
+    private static final String D_DAY_DISCOUNT = "크리스마스 디데이 할인: -%s원";
+    private static final String WEEKDAY_DISCOUNT = "평일 할인: -%s원";
+    private static final String WEEKEND_DISCOUNT = "주말 할인: -%s원";
+    private static final String SPECIAL_DISCOUNT = "특별 할인: -%s원";
+    private static final String FREE_GIFT_DISCOUNT = "증정 이벤트: -%s원";
 
     static NumberFormat numberFormat = NumberFormat.getInstance();
 
@@ -54,6 +60,34 @@ public class OutputView {
             return FREE_GIFT_MENU+BLANK+FREE_GIFT_NUMBER+NUMBER_MENU_UNIT;
         }
         return NOTHING;
+    }
+
+    public static void printDiscountStart() {
+        System.out.println(DISCOUNT_TITLE);
+    }
+
+    public static void printDDayDiscount(int discount) {
+        System.out.println(String.format(D_DAY_DISCOUNT, numberFormat.format(discount)));
+    }
+
+    public static void printWeekdayDiscount(int discount) {
+        System.out.println(String.format(WEEKDAY_DISCOUNT, numberFormat.format(discount)));
+    }
+
+    public static void printWeekendDiscount(int discount) {
+        System.out.println(String.format(WEEKEND_DISCOUNT, numberFormat.format(discount)));
+    }
+
+    public static void printSpecialDiscount(int discount) {
+        System.out.println(String.format(SPECIAL_DISCOUNT, numberFormat.format(discount)));
+    }
+
+    public static void printFreeGiftDiscount(int discount) {
+        System.out.println(String.format(FREE_GIFT_DISCOUNT, numberFormat.format(discount)));
+    }
+
+    public static void printNothing() {
+        System.out.println(NOTHING);
     }
 
     public static void printException(Exception exception) {

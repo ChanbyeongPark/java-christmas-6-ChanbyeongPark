@@ -22,22 +22,22 @@
 - [X] 할인 전 총 주문 금액 출력(숫자 3개 당 콤마(,) 포함해서 출력) - OutputView#printTotalPriceBeforeDiscount()
 - [X] 증정 메뉴 출력(할인 전 총 주문 금액이 12만원 이상인 경우 증정) - OutputView#printFreeGift()
   - [X] 없다면 `없음`출력 - OutputView#getFreeGift()
-- [ ] 혜택 내역 출력
-  - [ ] 할인 전 총 주문 금액이 10,000원 이하라면 할인을 적용하지 않음
-  - [ ] 크리스마스 디데이 할인(1일~25일 날짜에 따른 할인)
-    - [ ] 1~25일인지 판단
-    - [ ] 할인 금액 판단(1,000 + 100*(날짜-1))
-  - [ ] 평일 할인(일~목, 디저트 메뉴 1개당 2,023원 할인)
-    - [ ] 일~목인지 판단
-    - [ ] 디저트 메뉴 판단
-  - [ ] 주말 할인(금~토, 메인 메뉴 1개당 2,023원 할인)
-    - [ ] 금~토인지 판단
-    - [ ] 메인 메뉴 판단
-  - [ ] 특별 할인(일 또는 크리스마스라면 1,000원 할인)
-    - [ ] 크리스마스인지 판단
-    - [ ] 일요일인지 판단
-  - [ ] 증정 이벤트(증정이 있다면 샴페인 가격 25,000원을 할인으로 취급하고 출력)
-  - [ ] 없다면 `없음` 출력
+- [X] 혜택 내역 출력
+  - [X] 할인 전 총 주문 금액이 10,000원 이하라면 할인을 적용하지 않음 - flag 도입
+  - [X] 크리스마스 디데이 할인(1일~25일 날짜에 따른 할인) - DDayDiscount#calculateDDayDiscount()
+    - [X] 1~25일인지 판단
+    - [X] 할인 금액 판단(1,000 + 100*(날짜-1))
+  - [X] 평일 할인(일~목, 디저트 메뉴 1개당 2,023원 할인) - WeekdayDiscount#calculateWeekdayDiscount()
+    - [X] 일~목인지 판단 - WeekdayDiscount#whetherWeekday()
+    - [X] 디저트 메뉴 판단 - WeekdayDiscount#calDessertNumMenus()
+  - [X] 주말 할인(금~토, 메인 메뉴 1개당 2,023원 할인) - WeekendDiscount#calculateWeekendDiscount()
+    - [X] 금~토인지 판단 - WeekendDiscount#whetherWeekend()
+    - [X] 메인 메뉴 판단 - WeekendDiscount#calMainNumMenus()
+  - [X] 특별 할인(일 또는 크리스마스라면 1,000원 할인) - SpecialDiscount#calculateSpecialDiscoun()
+    - [X] 크리스마스인지 판단 - SpecialDiscount#whetherSunday()
+    - [X] 일요일인지 판단 - SpecialDiscount#whetherChristmas()
+  - [X] 증정 이벤트(증정이 있다면 샴페인 가격 25,000원을 할인으로 취급하고 출력) - FreeGiftDiscount#calculateFreeGiftDiscount()
+  - [X] 없다면 `없음` 출력
 - [ ] 총혜택 금액 출력
 - [ ] 할인 후 예상 결제 금액 출력(증정 이벤트 할인은 제외한 혜택 금액을 뺀 값과 같음)
   - [ ] 숫자 3자리 단위 콤마(,) 포함 출력
