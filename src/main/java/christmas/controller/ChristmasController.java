@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.FreeGift;
 import christmas.domain.TotalPriceBeforeDiscount;
 import christmas.domain.VisitDate;
 import christmas.domain.OrderMenus;
@@ -46,12 +47,18 @@ public class ChristmasController {
 
         TotalPriceBeforeDiscount totalPriceBeforeDiscount = calculateTotalPriceBeforeDiscount(menus);
 
-        //printGift()
+        FreeGift freeGift = calculateFreeGift(totalPriceBeforeDiscount);
     }
 
     private TotalPriceBeforeDiscount calculateTotalPriceBeforeDiscount(OrderMenus menus) {
         TotalPriceBeforeDiscount totalPriceBeforeDiscount = new TotalPriceBeforeDiscount(menus.getOrderMenus());
         OutputView.printTotalPriceBeforeDiscount(totalPriceBeforeDiscount.getTotalPriceBeforeDiscount());
         return totalPriceBeforeDiscount;
+    }
+
+    private FreeGift calculateFreeGift(TotalPriceBeforeDiscount totalPriceBeforeDiscount) {
+        FreeGift freeGift = new FreeGift(totalPriceBeforeDiscount);
+        OutputView.printFreeGift(freeGift.getFreeGift());
+        return freeGift;
     }
 }

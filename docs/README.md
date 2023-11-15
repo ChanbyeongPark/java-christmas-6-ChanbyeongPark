@@ -20,8 +20,8 @@
 - [X] 방문 예정 날짜를 포함한 안내문 출력 - OutputView#printResultStart()
 - [X] 주문 메뉴 출력 - OutputView#printMenus()
 - [X] 할인 전 총 주문 금액 출력(숫자 3개 당 콤마(,) 포함해서 출력) - OutputView#printTotalPriceBeforeDiscount()
-- [ ] 증정 메뉴 출력(할인 전 총 주문 금액이 12만원 이상인 경우 증정)
-  - [ ] 없다면 `없음`출력
+- [X] 증정 메뉴 출력(할인 전 총 주문 금액이 12만원 이상인 경우 증정) - OutputView#printFreeGift()
+  - [X] 없다면 `없음`출력 - OutputView#getFreeGift()
 - [ ] 혜택 내역 출력
   - [ ] 할인 전 총 주문 금액이 10,000원 이하라면 할인을 적용하지 않음
   - [ ] 크리스마스 디데이 할인(1일~25일 날짜에 따른 할인)

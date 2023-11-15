@@ -11,8 +11,13 @@ public class OutputView {
     private static final String RESULT_START = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!";
     private static final String RESULT_MENUS_TITLE = "<주문 메뉴>";
     private static final String TOTAL_PRICE_BEFORE_DISCOUNT_TITLE = "<할인 전 총주문 금액>";
+    private static final String FREE_GIFT_TITLE = "<증정 메뉴>";
     private static final String NUMBER_MENU_UNIT = "개";
     private static final String PRICE_UNIT = "원";
+    private static final String FREE_GIFT_MENU = "샴페인";
+    private static final String BLANK = " ";
+    private static final String FREE_GIFT_NUMBER = "1";
+    private static final String NOTHING = "없음";
 
     static NumberFormat numberFormat = NumberFormat.getInstance();
 
@@ -36,6 +41,19 @@ public class OutputView {
         System.out.println(TOTAL_PRICE_BEFORE_DISCOUNT_TITLE);
         System.out.println(numberFormat.format(price)+PRICE_UNIT);
         System.out.println();
+    }
+
+    public static void printFreeGift(boolean freeGift) {
+        System.out.println(FREE_GIFT_TITLE);
+        System.out.println(getFreeGift(freeGift));
+        System.out.println();
+    }
+
+    private static String getFreeGift(boolean freeGift) {
+        if (freeGift) {
+            return FREE_GIFT_MENU+BLANK+FREE_GIFT_NUMBER+NUMBER_MENU_UNIT;
+        }
+        return NOTHING;
     }
 
     public static void printException(Exception exception) {

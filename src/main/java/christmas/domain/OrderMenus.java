@@ -30,7 +30,7 @@ public class OrderMenus {
     private List<List<String>> separateMenus(String menus) {
         List<List<String>> candidateMenus = new ArrayList<>();
         String[] splitMenus = menus.split(MENUS_DELIMITER);
-        for (String menu: splitMenus) {
+        for (String menu : splitMenus) {
             candidateMenus.add(separateMenu(menu));
         }
         validateMenus(candidateMenus);
@@ -57,7 +57,7 @@ public class OrderMenus {
 
     private int getDistinguishNumMenus(List<List<String>> menus) {
         Set<String> nameMenus = new HashSet<>();
-        for (List<String> menu: menus) {
+        for (List<String> menu : menus) {
             nameMenus.add(menu.get(0));
         }
         return nameMenus.size();
@@ -71,7 +71,7 @@ public class OrderMenus {
 
     private int getTotalNumMenus(List<List<String>> menus) {
         int totalNumber = 0;
-        for (List<String> menu: menus) {
+        for (List<String> menu : menus) {
             totalNumber += Integer.parseInt(menu.get(1));
         }
         return totalNumber;
@@ -85,7 +85,7 @@ public class OrderMenus {
 
     private int getBeverageNumMenus(List<List<String>> menus) {
         int beverageNumber = 0;
-        for (List<String> menu: menus) {
+        for (List<String> menu : menus) {
             if (stringToEnumMenu(menu.get(0)).getType().equals("음료")) {
                 beverageNumber += 1;
             }
@@ -106,7 +106,7 @@ public class OrderMenus {
     }
 
     private void validateExistMenu(String nameMenu) {
-        if (Arrays.stream(Menu.values()).noneMatch(v->v.name().equals(nameMenu))) {
+        if (Arrays.stream(Menu.values()).noneMatch(v -> v.name().equals(nameMenu))) {
             throw new IllegalArgumentException(NOT_EXIST_ERROR);
         }
     }
