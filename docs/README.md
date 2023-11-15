@@ -1,22 +1,22 @@
 # 크리스마스 프로모션
 ## 기능 목록
-- [X] 방문 예상 날짜를 입력 받음 -InputView#inputDate()
+- [X] 방문 예상 날짜를 입력 받음 - InputView#inputDate()
   - [X] 입력 예외 처리 - ChristmasController#inputDate()
     - [X] 숫자(정수)가 아닌 경우 - InputView#converToInt()
-    - [X] 1 이상 31 이하의 숫자가 아닌 경우 VisitDate#validateDate()
-- [ ] 주문 메뉴와 개수를 입력 받음
-  - [ ] 입력 예외 처리
-    - [ ] 입력 형식에 맞지 않는 경우(메뉴-개수,메뉴-개수, ...)
-      - [ ] 콤마(,) 기준으로 분리해서 메뉴-개수 단위로 분리
-      - [ ] 대시(-) 기준으로 분리해서 메뉴와 개수도 분리
-      - [ ] 최종 형식이 (메뉴, 개수), (메뉴, 개수), ... 가 아닌 경우 예외처리
-    - [ ] 메뉴판에 없는 메뉴가 있는 경우
-    - [ ] 각 메뉴의 개수가 1 이상의 정수가 아닌 경우
-      - [ ] 숫자(정수)가 아닌 경우
-      - [ ] 1 이상의 숫자가 아닌 경우
-    - [ ] 메뉴가 중복으로 입력된 경우
-    - [ ] 주문 메뉴의 총 개수가 20을 넘는 경우
-    - [ ] 음료만 주문한 경우
+    - [X] 1 이상 31 이하의 숫자가 아닌 경우 - VisitDate#validateDate()
+- [X] 주문 메뉴와 개수를 입력 받음 - InputView#inputMenus()
+  - [X] 입력 예외 처리 - ChristmasController#inputMenus()
+    - [X] 입력 형식에 맞지 않는 경우(메뉴-개수,메뉴-개수, ...)
+      - [X] 콤마(,) 기준으로 분리해서 메뉴-개수 단위로 분리 - OrderMenus#separateMenus()
+      - [X] 대시(-) 기준으로 분리해서 메뉴와 개수도 분리 - OrderMenus#separateMenu()
+      - [X] 최종 형식이 (메뉴, 개수), (메뉴, 개수), ... 가 아닌 경우 예외처리 - OrderMenus#validateSizeMenu()
+    - [X] 메뉴판에 없는 메뉴가 있는 경우 - OrderMenus#validateExistMenu()
+    - [X] 각 메뉴의 개수가 1 이상의 정수가 아닌 경우 - OrderMenus#validateNumberMenu()
+      - [X] 숫자(정수)가 아닌 경우 - OrderMenus#convertToInt()
+      - [X] 1 이상의 숫자가 아닌 경우 - OrderMenus#validateMinNumberMenu()
+    - [X] 메뉴가 중복으로 입력된 경우 - OrderMenus#validateNotDuplicateMenus()
+    - [X] 주문 메뉴의 총 개수가 20을 넘는 경우 - OrderMenus#validateMaxTotalNumMenus()
+    - [X] 음료만 주문한 경우 - OrderMenus#validateNotOnlyBeverageMenus()
 - [ ] 주문 메뉴 출력
 - [ ] 할인 전 총 주문 금액 출력
   - [ ] 숫자 3개 당 콤마(,) 포함해서 출력
