@@ -6,6 +6,7 @@ import christmas.view.OutputView;
 
 public class ChristmasController {
     private static final int MIN_FOR_DISCOUNT = 10000;
+    private static final int FREE_GIFT_PRICE = 25000;
     private static final int ZERO = 0;
     public void start() {
         printStart();
@@ -50,7 +51,7 @@ public class ChristmasController {
         printIfZeroDiscount(totalDiscount);
 
         printTotalDiscount(totalDiscount);
-
+        printTotalPriceAfterDiscount(totalPriceBeforeDiscount, totalDiscount, freeGift);
 
     }
 
@@ -134,5 +135,17 @@ public class ChristmasController {
 
     private void printTotalDiscount(TotalDiscount totalDiscount) {
         OutputView.printTotalDiscount(totalDiscount.getTotalDiscount());
+    }
+
+    private void printTotalPriceAfterDiscount(TotalPriceBeforeDiscount totalPriceBeforeDiscount,
+                                              TotalDiscount totalDiscount, FreeGift freeGift) {
+        int freeGiftPrice = 0;
+        if (freeGift.getFreeGift()) {
+            freeGiftPrice = FREE_GIFT_PRICE;
+        }
+        int priceBeforeDiscount = totalPriceBeforeDiscount.getTotalPriceBeforeDiscount();
+        int discount = totalDiscount.getTotalDiscount();
+        int priceAfterDiscount = priceBeforeDiscount-discount+freeGiftPrice;
+        OutputView.printTotalPriceAfterDiscount(priceAfterDiscount);
     }
 }

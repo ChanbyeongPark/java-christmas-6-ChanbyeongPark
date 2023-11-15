@@ -14,6 +14,7 @@ public class OutputView {
     private static final String FREE_GIFT_TITLE = "<증정 메뉴>";
     private static final String DISCOUNT_TITLE = "<혜택 내역>";
     private static final String TOTAL_DISCOUNT_TITLE = "<총혜택 금액>";
+    private static final String TOTAL_PRICE_AFTER_DISCOUNT_TITLE = "<할인 후 예상 결제 금액>";
     private static final String NUMBER_MENU_UNIT = "개";
     private static final String PRICE_UNIT = "원";
     private static final String FREE_GIFT_MENU = "샴페인";
@@ -96,6 +97,12 @@ public class OutputView {
         System.out.println();
         System.out.println(TOTAL_DISCOUNT_TITLE);
         System.out.println(MINUS+numberFormat.format(discount)+PRICE_UNIT);
+        System.out.println();
+    }
+
+    public static void printTotalPriceAfterDiscount(int discount) {
+        System.out.println(TOTAL_PRICE_AFTER_DISCOUNT_TITLE);
+        System.out.println(numberFormat.format(discount)+PRICE_UNIT);
         System.out.println();
     }
 
