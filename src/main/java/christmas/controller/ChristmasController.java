@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.TotalPriceBeforeDiscount;
 import christmas.domain.VisitDate;
 import christmas.domain.OrderMenus;
 import christmas.view.InputView;
@@ -42,5 +43,13 @@ public class ChristmasController {
         OutputView.printResultStart(date);
 
         OutputView.printMenus(menus);
+
+        printTotalPriceBeforeDiscount(menus);
+    }
+
+    private void printTotalPriceBeforeDiscount(OrderMenus menus) {
+        TotalPriceBeforeDiscount totalPriceBeforeDiscount = new TotalPriceBeforeDiscount(menus.getOrderMenus());
+
+        OutputView.printTotalPriceBeforeDiscount(totalPriceBeforeDiscount.getTotalPriceBeforeDiscount());
     }
 }
