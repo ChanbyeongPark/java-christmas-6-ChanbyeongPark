@@ -42,16 +42,14 @@ public class ChristmasController {
     private void printResult(VisitDate date, OrderMenus menus) {
         OutputView.printResultStart(date);
         OutputView.printMenus(menus);
-
         TotalPriceBeforeDiscount totalPriceBeforeDiscount = calculateTotalPriceBeforeDiscount(menus);
-
         FreeGift freeGift = calculateFreeGift(totalPriceBeforeDiscount);
 
         boolean discountFlag = totalPriceBeforeDiscount.getTotalPriceBeforeDiscount() >= MIN_FOR_DISCOUNT;
         TotalDiscount totalDiscount = calculateTotalDiscount(date, menus, freeGift, discountFlag);
         printIfZeroDiscount(totalDiscount);
 
-        //printTotalDiscount(totalDiscount);
+        printTotalDiscount(totalDiscount);
 
 
     }
@@ -132,5 +130,9 @@ public class ChristmasController {
         if (totalDiscount.getTotalDiscount() == ZERO) {
             OutputView.printNothing();
         }
+    }
+
+    private void printTotalDiscount(TotalDiscount totalDiscount) {
+        OutputView.printTotalDiscount(totalDiscount.getTotalDiscount());
     }
 }

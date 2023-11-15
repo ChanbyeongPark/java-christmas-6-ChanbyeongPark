@@ -13,12 +13,14 @@ public class OutputView {
     private static final String TOTAL_PRICE_BEFORE_DISCOUNT_TITLE = "<할인 전 총주문 금액>";
     private static final String FREE_GIFT_TITLE = "<증정 메뉴>";
     private static final String DISCOUNT_TITLE = "<혜택 내역>";
+    private static final String TOTAL_DISCOUNT_TITLE = "<총혜택 금액>";
     private static final String NUMBER_MENU_UNIT = "개";
     private static final String PRICE_UNIT = "원";
     private static final String FREE_GIFT_MENU = "샴페인";
     private static final String BLANK = " ";
     private static final String FREE_GIFT_NUMBER = "1";
     private static final String NOTHING = "없음";
+    private static final String MINUS = "-";
     private static final String D_DAY_DISCOUNT = "크리스마스 디데이 할인: -%s원";
     private static final String WEEKDAY_DISCOUNT = "평일 할인: -%s원";
     private static final String WEEKEND_DISCOUNT = "주말 할인: -%s원";
@@ -88,6 +90,13 @@ public class OutputView {
 
     public static void printNothing() {
         System.out.println(NOTHING);
+    }
+
+    public static void printTotalDiscount(int discount) {
+        System.out.println();
+        System.out.println(TOTAL_DISCOUNT_TITLE);
+        System.out.println(MINUS+numberFormat.format(discount)+PRICE_UNIT);
+        System.out.println();
     }
 
     public static void printException(Exception exception) {
