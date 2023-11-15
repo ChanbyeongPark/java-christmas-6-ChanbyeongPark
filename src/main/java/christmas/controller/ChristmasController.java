@@ -41,6 +41,6 @@ public class ChristmasController {
     private void printResult(VisitDate date, OrderMenus menus) {
         OutputView.printResultStart(date);
 
-        //OutputView.printMenus(orderMenus);
+        OutputView.printMenus(menus);
     }
 }

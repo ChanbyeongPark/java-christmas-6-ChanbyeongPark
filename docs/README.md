@@ -18,7 +18,7 @@
     - [X] 주문 메뉴의 총 개수가 20을 넘는 경우 - OrderMenus#validateMaxTotalNumMenus()
     - [X] 음료만 주문한 경우 - OrderMenus#validateNotOnlyBeverageMenus()
 - [X] 방문 예정 날짜를 포함한 안내문 출력 - OutputView#printResultStart()
-- [ ] 주문 메뉴 출력
+- [X] 주문 메뉴 출력
 - [ ] 할인 전 총 주문 금액 출력
   - [ ] 숫자 3개 당 콤마(,) 포함해서 출력
 - [ ] 증정 메뉴 출력(할인 전 총 주문 금액이 12만원 이상인 경우 증정)
