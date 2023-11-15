@@ -7,10 +7,17 @@ import christmas.view.OutputView;
 
 public class ChristmasController {
     public void start() {
+        printStart();
+
         VisitDate date = inputDate();
 
-        OrderMenus orderMenus = inputMenus();
+        OrderMenus menus = inputMenus();
 
+        printResult(date, menus);
+    }
+
+    private void printStart() {
+        OutputView.printPlannerStart();
     }
 
     private VisitDate inputDate() {
@@ -29,5 +36,11 @@ public class ChristmasController {
             OutputView.printException(e);
             return inputMenus();
         }
+    }
+
+    private void printResult(VisitDate date, OrderMenus menus) {
+        OutputView.printResultStart(date);
+
+        //OutputView.printMenus(orderMenus);
     }
 }

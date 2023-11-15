@@ -27,4 +27,8 @@ public class VisitDate {
             throw new IllegalArgumentException(MAX_ERROR);
         }
     }
+
+    public int getVisitDate() {
+        return date;
+    }
 }

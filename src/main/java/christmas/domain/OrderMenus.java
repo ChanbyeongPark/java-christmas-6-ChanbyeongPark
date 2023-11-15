@@ -128,4 +128,8 @@ public class OrderMenus {
             throw new IllegalArgumentException(MIN_ERROR);
         }
     }
+
+    public List<List<String>> getOrderMenus() {
+        return orderMenus;
+    }
 }
