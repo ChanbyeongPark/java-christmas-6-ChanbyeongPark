@@ -14,7 +14,7 @@ public class DDayDiscount {
     private int calculateDDayDiscount(VisitDate visitDate) {
         int date = visitDate.getVisitDate();
         if (date <= MAX_DATE) {
-            return MIN_DISCOUNT+date*DISCOUNT_PER_DAY;
+            return MIN_DISCOUNT + date * DISCOUNT_PER_DAY;
         }
         return ZERO;
     }

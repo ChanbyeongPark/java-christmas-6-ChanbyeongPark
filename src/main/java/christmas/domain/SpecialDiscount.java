@@ -15,7 +15,7 @@ public class SpecialDiscount {
     private int calculateSpecialDiscount(VisitDate date) {
         boolean sunday = whetherSunday(date);
         boolean christmas = whetherChristmas(date);
-        if (sunday || christmas)  {
+        if (sunday || christmas) {
             return SPECIAL_DISCOUNT;
         }
         return ZERO;

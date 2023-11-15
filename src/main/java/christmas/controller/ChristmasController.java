@@ -8,6 +8,7 @@ public class ChristmasController {
     private static final int MIN_FOR_DISCOUNT = 10000;
     private static final int FREE_GIFT_PRICE = 25000;
     private static final int ZERO = 0;
+
     public void start() {
         printStart();
 
@@ -52,7 +53,7 @@ public class ChristmasController {
 
         printTotalDiscount(totalDiscount);
         printTotalPriceAfterDiscount(totalPriceBeforeDiscount, totalDiscount, freeGift);
-
+        EventBadge eventBadge = calculateEventBadge(totalDiscount);
     }
 
     private TotalPriceBeforeDiscount calculateTotalPriceBeforeDiscount(OrderMenus menus) {
@@ -145,7 +146,13 @@ public class ChristmasController {
         }
         int priceBeforeDiscount = totalPriceBeforeDiscount.getTotalPriceBeforeDiscount();
         int discount = totalDiscount.getTotalDiscount();
-        int priceAfterDiscount = priceBeforeDiscount-discount+freeGiftPrice;
+        int priceAfterDiscount = priceBeforeDiscount - discount + freeGiftPrice;
         OutputView.printTotalPriceAfterDiscount(priceAfterDiscount);
+    }
+
+    private EventBadge calculateEventBadge(TotalDiscount totalDiscount) {
+        EventBadge eventBadge = new EventBadge(totalDiscount);
+        OutputView.printEventBadge(eventBadge.getEventBadge());
+        return eventBadge;
     }
 }

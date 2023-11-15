@@ -30,7 +30,7 @@ public class WeekdayDiscount {
     }
 
     private int calculateDiscount(OrderMenus menus) {
-        return DISCOUNT_PER_DESSERT*calDessertNumMenus(menus);
+        return DISCOUNT_PER_DESSERT * calDessertNumMenus(menus);
     }
 
     private int calDessertNumMenus(OrderMenus menus) {

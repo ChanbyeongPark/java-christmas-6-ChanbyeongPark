@@ -15,13 +15,13 @@ public class OutputView {
     private static final String DISCOUNT_TITLE = "<혜택 내역>";
     private static final String TOTAL_DISCOUNT_TITLE = "<총혜택 금액>";
     private static final String TOTAL_PRICE_AFTER_DISCOUNT_TITLE = "<할인 후 예상 결제 금액>";
+    private static final String EVENT_BADGE_TITLE = "<12월 이벤트 배지>";
     private static final String NUMBER_MENU_UNIT = "개";
     private static final String PRICE_UNIT = "원";
     private static final String FREE_GIFT_MENU = "샴페인";
     private static final String BLANK = " ";
     private static final String FREE_GIFT_NUMBER = "1";
     private static final String NOTHING = "없음";
-    private static final String MINUS = "-";
     private static final String D_DAY_DISCOUNT = "크리스마스 디데이 할인: -%s원";
     private static final String WEEKDAY_DISCOUNT = "평일 할인: -%s원";
     private static final String WEEKEND_DISCOUNT = "주말 할인: -%s원";
@@ -38,17 +38,18 @@ public class OutputView {
         System.out.println(String.format(RESULT_START, date.getVisitDate()));
         System.out.println();
     }
+
     public static void printMenus(OrderMenus menus) {
         System.out.println(RESULT_MENUS_TITLE);
         for (List<String> menu : menus.getOrderMenus()) {
-            System.out.println(String.format("%s %s"+NUMBER_MENU_UNIT, menu.get(0), menu.get(1)));
+            System.out.println(String.format("%s %s" + NUMBER_MENU_UNIT, menu.get(0), menu.get(1)));
         }
         System.out.println();
     }
 
     public static void printTotalPriceBeforeDiscount(int price) {
         System.out.println(TOTAL_PRICE_BEFORE_DISCOUNT_TITLE);
-        System.out.println(numberFormat.format(price)+PRICE_UNIT);
+        System.out.println(numberFormat.format(price) + PRICE_UNIT);
         System.out.println();
     }
 
@@ -60,7 +61,7 @@ public class OutputView {
 
     private static String getFreeGift(boolean freeGift) {
         if (freeGift) {
-            return FREE_GIFT_MENU+BLANK+FREE_GIFT_NUMBER+NUMBER_MENU_UNIT;
+            return FREE_GIFT_MENU + BLANK + FREE_GIFT_NUMBER + NUMBER_MENU_UNIT;
         }
         return NOTHING;
     }
@@ -96,14 +97,19 @@ public class OutputView {
     public static void printTotalDiscount(int discount) {
         System.out.println();
         System.out.println(TOTAL_DISCOUNT_TITLE);
-        System.out.println(MINUS+numberFormat.format(discount)+PRICE_UNIT);
+        System.out.println(numberFormat.format(-discount) + PRICE_UNIT);
         System.out.println();
     }
 
     public static void printTotalPriceAfterDiscount(int discount) {
         System.out.println(TOTAL_PRICE_AFTER_DISCOUNT_TITLE);
-        System.out.println(numberFormat.format(discount)+PRICE_UNIT);
+        System.out.println(numberFormat.format(discount) + PRICE_UNIT);
         System.out.println();
+    }
+
+    public static void printEventBadge(String eventBadge) {
+        System.out.println(EVENT_BADGE_TITLE);
+        System.out.println(eventBadge);
     }
 
     public static void printException(Exception exception) {

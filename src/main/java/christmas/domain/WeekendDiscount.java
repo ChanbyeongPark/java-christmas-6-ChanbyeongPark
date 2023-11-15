@@ -30,7 +30,7 @@ public class WeekendDiscount {
     }
 
     private int calculateDiscount(OrderMenus menus) {
-        return DISCOUNT_PER_MAIN*calMainNumMenus(menus);
+        return DISCOUNT_PER_MAIN * calMainNumMenus(menus);
     }
 
     private int calMainNumMenus(OrderMenus menus) {
