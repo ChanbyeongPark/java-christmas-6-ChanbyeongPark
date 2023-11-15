@@ -44,12 +44,14 @@ public class ChristmasController {
 
         OutputView.printMenus(menus);
 
-        printTotalPriceBeforeDiscount(menus);
+        TotalPriceBeforeDiscount totalPriceBeforeDiscount = calculateTotalPriceBeforeDiscount(menus);
+
+        //printGift()
     }
 
-    private void printTotalPriceBeforeDiscount(OrderMenus menus) {
+    private TotalPriceBeforeDiscount calculateTotalPriceBeforeDiscount(OrderMenus menus) {
         TotalPriceBeforeDiscount totalPriceBeforeDiscount = new TotalPriceBeforeDiscount(menus.getOrderMenus());
-
         OutputView.printTotalPriceBeforeDiscount(totalPriceBeforeDiscount.getTotalPriceBeforeDiscount());
+        return totalPriceBeforeDiscount;
     }
 }
